@@ -1,0 +1,266 @@
+//-------------------------------------------------------------------//
+//
+//	Microsoft Agent Character Description
+//
+//	Character Version 2.1
+//	Copyright (c) 1996-98, Microsoft Corporation
+//
+//-------------------------------------------------------------------//
+
+DefineCharacter
+
+	DefineInfo 0x0009
+		Name = "Nonny"
+		Description = "A blue cat that helps you with your data."
+	EndInfo
+
+	GUID = {3AFEA97A-F7B5-4315-A7A2-82C4C3135894}
+	Icon = "C:\Users\cprna\Downloads\nonny_icon.ico"
+	Width = 309
+	Height = 300
+	Transparency = 10
+	DefaultFrameDuration = 10
+	Style = AXS_VOICE_TTS | AXS_BALLOON_ROUNDRECT | AXS_BALLOON_SIZETOTEXT
+	TTSEngineID = {E0725551-286F-11D0-8E73-00A0C9083363}
+	TTSModeID = {C77C5170-2867-11D0-847B-444553540000}
+	TTSLangID = 0x0409
+	TTSLangDialect = "US English"
+	TTSGender = 1
+	TTSAge = 30
+	TTSStyle = "Clear low-accented North American English native"
+	ColorTable = "C:\Users\cprna\Documents\Nonny\Nonny_Eyes-open.bmp"
+
+EndCharacter
+
+//-------------------------------------------------------------------//
+
+DefineBalloon
+	NumLines = 2
+	CharsPerLine = 28
+	FontName = "MS Sans Serif"
+	FontHeight = 10
+	ForeColor = 00000000
+	BackColor = 00fdfbe3
+	BorderColor = 00ff7300
+EndBalloon
+
+//-------------------------------------------------------------------//
+
+DefineAnimation "Show"
+
+	TransitionType = 2
+
+	DefineFrame
+		Duration = 10
+		DefineImage
+			Filename = "C:\Users\cprna\Documents\Nonny\Nonny_Eyes-open.bmp"
+			OffsetX = 100
+		EndImage
+	EndFrame
+
+EndAnimation
+
+//-------------------------------------------------------------------//
+
+DefineAnimation "Hide"
+
+	TransitionType = 2
+
+	DefineFrame
+		Duration = 10
+		DefineImage
+			Filename = "C:\Users\cprna\Documents\Nonny\Nonny_Eyes-open.bmp"
+			OffsetX = 100
+		EndImage
+	EndFrame
+
+EndAnimation
+
+//-------------------------------------------------------------------//
+
+DefineAnimation "Idle"
+
+	TransitionType = 2
+
+	DefineFrame
+		Duration = 14
+		DefineImage
+			Filename = "C:\Users\cprna\Documents\Nonny\Nonny_Eyes-closed.bmp"
+			OffsetX = 100
+		EndImage
+	EndFrame
+
+	DefineFrame
+		Duration = 5
+		DefineImage
+			Filename = "C:\Users\cprna\Documents\Nonny\Nonny_Eyes-open.bmp"
+			OffsetX = 100
+		EndImage
+	EndFrame
+
+EndAnimation
+
+//-------------------------------------------------------------------//
+
+DefineAnimation "Speaking"
+
+	TransitionType = 2
+
+	DefineFrame
+		Duration = 10
+		DefineImage
+			Filename = "C:\Users\cprna\Documents\Nonny\Nonny_Eyes-closed.bmp"
+			OffsetX = 100
+		EndImage
+	EndFrame
+
+	DefineFrame
+		Duration = 10
+		DefineImage
+			Filename = "C:\Users\cprna\Documents\Nonny\Nonny_Eyes-open.bmp"
+			OffsetX = 100
+		EndImage
+	EndFrame
+
+EndAnimation
+
+//-------------------------------------------------------------------//
+
+DefineAnimation "Down"
+
+	Return = "Show"
+
+	DefineFrame
+		Duration = 1
+		SoundEffect = "C:\Users\cprna\Documents\Nonny\moving.wav"
+		DefineImage
+			Filename = "C:\Users\cprna\Documents\Nonny\Nonny_Eyes-Moving.bmp"
+			OffsetX = 100
+		EndImage
+	EndFrame
+
+EndAnimation
+
+//-------------------------------------------------------------------//
+
+DefineAnimation "Up"
+
+	Return = "Show"
+
+	DefineFrame
+		Duration = 1
+		SoundEffect = "C:\Users\cprna\Documents\Nonny\moving.wav"
+		DefineImage
+			Filename = "C:\Users\cprna\Documents\Nonny\Nonny_Eyes-Moving.bmp"
+			OffsetX = 100
+		EndImage
+	EndFrame
+
+EndAnimation
+
+//-------------------------------------------------------------------//
+
+DefineAnimation "Right"
+
+	Return = "Show"
+
+	DefineFrame
+		Duration = 1
+		SoundEffect = "C:\Users\cprna\Documents\Nonny\moving.wav"
+		DefineImage
+			Filename = "C:\Users\cprna\Documents\Nonny\Nonny_Eyes-Moving.bmp"
+			OffsetX = 100
+		EndImage
+	EndFrame
+
+EndAnimation
+
+//-------------------------------------------------------------------//
+
+DefineAnimation "Left"
+
+	Return = "Show"
+
+	DefineFrame
+		Duration = 1
+		SoundEffect = "C:\Users\cprna\Documents\Nonny\moving.wav"
+		DefineImage
+			Filename = "C:\Users\cprna\Documents\Nonny\Nonny_Eyes-Moving.bmp"
+			OffsetX = 100
+		EndImage
+	EndFrame
+
+EndAnimation
+
+//-------------------------------------------------------------------//
+
+DefineAnimation "Explain"
+
+	Return = "Show"
+
+	DefineFrame
+		Duration = 10
+		DefineImage
+			Filename = "C:\Users\cprna\Documents\Nonny\Nonny_Explain.bmp"
+			OffsetX = 100
+		EndImage
+	EndFrame
+
+EndAnimation
+
+//-------------------------------------------------------------------//
+
+DefineState "Showing"
+	Animation = "Show"
+EndState
+
+//-------------------------------------------------------------------//
+
+DefineState "Hiding"
+	Animation = "Hide"
+EndState
+
+//-------------------------------------------------------------------//
+
+DefineState "IdlingLevel1"
+	Animation = "Idle"
+EndState
+
+//-------------------------------------------------------------------//
+
+DefineState "IdlingLevel2"
+	Animation = "Idle"
+EndState
+
+//-------------------------------------------------------------------//
+
+DefineState "IdlingLevel3"
+	Animation = "Idle"
+EndState
+
+//-------------------------------------------------------------------//
+
+DefineState "MovingLeft"
+	Animation = "Left"
+EndState
+
+//-------------------------------------------------------------------//
+
+DefineState "MovingRight"
+	Animation = "Right"
+EndState
+
+//-------------------------------------------------------------------//
+
+DefineState "MovingDown"
+	Animation = "Down"
+EndState
+
+//-------------------------------------------------------------------//
+
+DefineState "Speaking"
+	Animation = "Speaking"
+EndState
+
+//-------------------------------------------------------------------//
+
